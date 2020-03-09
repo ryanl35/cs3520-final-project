@@ -83,17 +83,12 @@ The documentation for the SDL library can be found here: http://wiki.libsdl.org/
 
 *These libraries can be used to render our main character's player, the monsters, and can also listen to the player's input in the form of key press and/or mouse movements. Sounds can be generated like the original game for when the player attempts to shoot the monsters and when the user jumps on a platform or a spring*
 
-Example of the SFML being used (Fig. 1): <img align="right" width="300px" src="./media/SFML being used 1.jpg" alt="SFML 1">
-Example of the SFML being used (Fig. 2): <img align="left" width="300px" src="./media/SFML being used 2.jpg" alt="SFML 2">
+Example of the SFML being used (Fig. 1): 
+<img align="center" width="300px" src="./media/SFML being used 1.jpg" alt="SFML 1">
 
 
-
-
-
-
-
-
-
+Example of the SFML being used (Fig. 2): 
+<img align="center" width="300px" src="./media/SFML being used 2.jpg" alt="SFML 2">
 
 
 # Rubric
