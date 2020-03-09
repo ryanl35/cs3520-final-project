@@ -87,6 +87,15 @@ Example of the SFML being used (Fig. 1): <img align="right" width="300px" src=".
 Example of the SFML being used (Fig. 2): <img align="right" width="300px" src="./media/SFML being used 2.jpg" alt="SFML 2">
 
 
+
+
+
+
+
+
+
+
+
 # Rubric
 * 15% of final project.
 * Will be graded how detailed and thoughtfull your responses are. One sentance answers will not recieve many points. 
