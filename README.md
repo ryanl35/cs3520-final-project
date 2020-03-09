@@ -1,1 +1,3 @@
-# cs3520_final_project
+# CS3520 Final Project
+
+By: Ryan Liang & Maris McGuinness
