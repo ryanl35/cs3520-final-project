@@ -76,12 +76,16 @@ the UML diagrams as in a later deliverable.
 List few libraries as choices that you might be using. Provide links to documentation and examples of how these libraries 
 are used. Talk about how you might use it in your project.
 
-*In general, the most useful libraries for our game will be the libraries that give us access to the different components of our computer, such as keyboard and mouse handlers (such as Java). One main library that we would most likely be using is the SFML library, or the Simple and Fast Multimedia Library. This library will be able to help us build many aspects of our game, including rendering a window, the drawings on it, adding sounds, adding a score keeper, and much more.  Another library we could use potentially is the SDL, or Simple DirectMedia Library, which provides low level access to similar aspects to SFML such as mouse, keyboard, and graphics hardware.*
+*In general, the most useful libraries for our game will be the libraries that give us access to the different components of our computer, such as keyboard and mouse handlers (such as Java). One main library that we would most likely be using is the SFML, or the Simple and Fast Multimedia Library. This library will be able to help us build many aspects of our game, including rendering a window, the drawings on it, adding sounds, adding a score keeper, and much more.  Another library we could use potentially is the SDL, or Simple DirectMedia Library, which provides low level access to similar aspects to SFML such as mouse, keyboard, and graphics hardware.*
 
 The documentation for the SFML library can be found here: https://www.sfml-dev.org/documentation/2.5.1/annotated.php
 The documentation for the SDL library can be found here: http://wiki.libsdl.org/CategoryAPI
 
 *These libraries can be used to render our main character's player, the monsters, and can also listen to the player's input in the form of key press and/or mouse movements. Sounds can be generated like the original game for when the player attempts to shoot the monsters and when the user jumps on a platform or a spring*
+
+Example of the SFML being used (Fig. 1): <img align="right" width="300px" src="./media/SFML being used 1.jpg" alt="SFML 1">
+Example of the SFML being used (Fig. 2): <img align="right" width="300px" src="./media/SFML being used 2.jpg" alt="SFML 2">
+
 
 # Rubric
 * 15% of final project.
