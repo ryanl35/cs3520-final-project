@@ -88,7 +88,7 @@ Example of the SFML being used (Fig. 1):
 
 
 Example of the SFML being used (Fig. 2): 
-<img align="center" width="400px" src="./media/SFML being used 2.jpg" alt="SFML 2">
+<img align="center" width="300px" src="./media/SFML being used 2.png" alt="SFML 2">
 
 
 # Rubric
