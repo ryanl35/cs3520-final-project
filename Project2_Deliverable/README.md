@@ -56,11 +56,17 @@ Provide answers to each of the following:
  
 * What are the build instructions.
 
- *At first , you must download SFML. You can do that from their website, and download it for Visual Studio if you are using Windows or you can download the MacOS version for XCode. We used the package manager Homebrew to install SFML. If you are using Homebrew, all you need to do is run:
+ *At first , you must download SFML. You can do that from their website, and download it for Visual Studio if you are using Windows or you can download the MacOS version for XCode. We used the package manager Homebrew to install SFML. If you are using Homebrew, all you need to do is run:*
+
 -$ brew install sfml
-in the command line. More instructions are available on their website: https://www.sfml-dev.org/download/sfml/2.5.1/ and https://www.sfml-dev.org/tutorials/2.5/ (under the "Getting Started" section, click the part that applies to you)
+
+in the command line. 
+
+More instructions are available on their website: https://www.sfml-dev.org/download/sfml/2.5.1/ and https://www.sfml-dev.org/tutorials/2.5/ (under the "Getting Started" section, click the part that applies to you)
+
 I have also made the MacOS Library Code available in the repo.
-Once that has been done, clone our repo, open a terminal at the folder, and run "make", which will create an executable "sfml-app".
+
+*Once that has been done, clone our repo, open a terminal at the folder, and run "make", which will create an executable "sfml-app".
 Run this executable by using "./sfml-app".*
  
 * Did you upload all of your code? 
