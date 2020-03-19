@@ -64,7 +64,16 @@ that could be done. Maintainability, talk about how much you expect this to be m
 
 * List several use case scenarios of your project.
 
-*Some use cases of our project will be when the user w*
+*After running the .cpp file provided in the command line to open the game, the user may perform the following use cases:*
+
+1. Start the game
+2. Jump up
+3. Move across screen (left/right)
+4. Shoot
+5. Save the game
+6. Exit the game
+
+*Our use cases are quite simple as the complexity of the game is encompassed mainly in the infinite scrolling and 2D graphic aspects. Immediately after opening the game, a user is able to either start the game or exit the game. Once the game has started, a user can 'jump' to the next platform, 'move' left or right across the screen, and/or 'shoot' at monsters. While the game is ongoing, a user may also save and exit the game or exit the game without saving.*
 
 * Provide a UML class diagram of possible design of your project. This doesn't have to be too detailed, you can update 
 the UML diagrams as in a later deliverable. 
