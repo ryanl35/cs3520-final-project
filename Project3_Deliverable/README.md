@@ -18,11 +18,18 @@ decisions.
 
 Provide answers to each of the following:
 
-* The UML Diagram & Project Structure
+* The UML Diagram & Project Structure (+ other comments)
 
 *Our previous UML Diagram was a rough outline of what we expected the project to look like in terms of structure and class design. After working a little bit more with SFML and the different APIs and classes within them, turns out a lot of what we need is already provided for us. What I mean by this is that the Sprite class turned out to be extremely useful when it came to rendering & positioning our player on the screen, and adding several of the key aspects of our game. There are a lot of methods that the Sprite class provies such as getPosition() and setPosition() (as well as move()) that don't require us to make our own class for the players or NPCs such as the Monsters. This has been coming in handy because the only class we really had to build on our own was the Platform class, because I needed to access the specific X and Y coordinates individually, which you couldn't do with the Sprite class. This is the reason that our UML diagram is a bit different than the previous one. It includes the Platform class and its methods, and it includes the Characters class, which I originally intended to be a designed class but eventually realized can just be represented through the provided Sprite class.*
 
 *Another thing I'd like to add is that I used a Deque to create the Platforms on the screen. I used a for loop to create a specified number of platforms. I did this by first creating a new Platform object, randomizing its position on the screen, and then subsequently pushing that Platform onto the Deque. Later, I rendered each Platform into a Green Platform Sprite to represent it as a 2D object in our game.*
+
+*Features I still need to implement (for my own use, you can ignore):*
+* Shooting
+* Monsters
+* Other platforms
+* Holes
+* Pause screen(?)
 
 * What dificulties did you face in deliverable 3? 
 
