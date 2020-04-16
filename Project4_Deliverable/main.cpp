@@ -1,6 +1,6 @@
-#include "SFML-2.5.1/include/SFML/Graphics.hpp"
-#include "SFML-2.5.1/include/SFML/Audio.hpp"
-#include "SFML-2.5.1/include/SFML/Window.hpp"
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/Window.hpp>
 
 #include <iostream>
 #include <sstream>
@@ -10,76 +10,153 @@
 #include <deque>
 
 class Object {
+protected:
+    int x;
+    int y;
 public:
-    virtual int getX() const = 0;
-    virtual int getY() const = 0;
-    virtual void setX(int x) = 0;
-    virtual void setY(int y) = 0;
+    virtual int getX() const { return x; }
+    virtual int getY() const { return y; };
+    virtual void setX(int x) { this->x = x; };
+    virtual void setY(int y) { this->y = y; };
 };
 
 class Monster : public Object {
-private:
-    int x;
-    int y;
-
 public:
-    Monster(int x, int y) : x(x), y(y) {};
-
-    int getX() const { return this->x; }
-    int getY() const { return this->y; }
-    void setX(int x) { this->x = x; }
-    void setY(int y) { this->y = y; }
+    Monster(int x, int y) {
+        this->x = x;
+        this->y = y;
+    }
 };
 
 
 class Platform : public Object {
 private:
-    int x;
-    int y;
+
     bool isGone; // field to determine if platform should disappear
 
 public:
-    Platform(int x, int y) : x(x), y(y), isGone(false) {};
+    Platform(int x, int y) {
+        this->x = x;
+        this->y = y;
+        this->isGone = false;
+    };
 
-    int getX() const { return this->x; }
-    int getY() const { return this->y; }
     bool getIsGone() const { return this->isGone; }
-    void setX(int x) { this->x = x; }
-    void setY(int y) { this->y = y; }
     void disappear() { this->isGone = true; }
-
 };
 
 
 class Bullet : public Object {
-private:
-    int x;
-    int y;
 public:
-    Bullet(int x, int y) : x(x), y(y) {};
-
-    int getX() const { return this->x; }
-    int getY() const { return this->y; }
-    void setX(int x) { this->x = x; }
-    void setY(int y) { this->y = y; }
+    Bullet(int x, int y) {
+        this->x = x;
+        this->y = y;
+    }
 };
 
 class Hole : public Object {
-private:
-    int x;
-    int y;
 public:
-    Hole(int x, int y) : x(x), y(y) {};
-
-    int getX() const { return this->x; }
-    int getY() const { return this->y; }
-    void setX(int x) { this->x = x; }
-    void setY(int y) { this->y = y; }
+    Hole(int x, int y) {
+        this->x = x;
+        this->y = y;
+    }
 };
 
 
+//////////////////////////////////////////////////////////
+/////////////////////  TEST SUITE ////////////////////////
+//////////////////////////////////////////////////////////
+
+void assertEquals(bool value, const char * test){
+    if ( value ){
+        std::cout << "Passed: " << test << std::endl;
+    }
+    else{
+        std::cout << "--FAILED--" << test << std::endl;
+    }
+}
+
+void testGetX(int getX, int expectedX) {
+    assertEquals(getX == expectedX, __FUNCTION__);
+}
+
+void testGetY(int getY, int expectedY) {
+    assertEquals(getY == expectedY, __FUNCTION__);
+}
+
+void testGetIsGone(bool getIsGone, bool expectedBool) {
+    assertEquals(getIsGone == expectedBool, __FUNCTION__);
+}
+
+void testSetX(int setXValue, int getXValue) {
+    assertEquals(setXValue == getXValue, __FUNCTION__);
+}
+
+void testSetY(int setYValue, int getYValue) {
+    assertEquals(setYValue == getYValue, __FUNCTION__);
+}
+
+void testDisappear(bool curr, bool newBool) {
+    assertEquals(curr == newBool, __FUNCTION__);
+}
+
 int main()
 {
+    //////////////////////////////////////////////////////////
+    /////////////////////  TEST SUITE ////////////////////////
+    //////////////////////////////////////////////////////////
+    Monster * monsterTest = new Monster(5, 5);
+    Platform * platformTest = new Platform(10, 5);
+    Bullet * bulletTest = new Bullet(50, 50);
+    Hole * holeTest = new Hole(20, 50);
+
+    // TESTING: getX() on each type of Object
+    testGetX(monsterTest->getX(), 5);
+    testGetX(platformTest->getX(), 10);
+    testGetX(bulletTest->getX(), 50);
+    testGetX(holeTest->getX(), 20);
+
+    // TESTING: getY() on each type of Object
+    testGetY(monsterTest->getY(), 5);
+    testGetY(platformTest->getY(), 5);
+    testGetY(bulletTest->getY(), 50);
+    testGetY(holeTest->getY(), 50);
+
+    // TESTING: getY() on each type of Object
+    testGetIsGone(platformTest->getIsGone(), false); // test to make sure a Platform is initalized with false value
+
+    // TESTING: setX() to see if the values were changed
+    monsterTest->setX(10);
+    testSetX(10, monsterTest->getX());
+    platformTest->setX(100);
+    testSetX(100, platformTest->getX());
+    bulletTest->setX(255);
+    testSetX(255, bulletTest->getX());
+    holeTest->setX(90);
+    testSetX(90, holeTest->getX());
+
+    // TESTING: setY() to see if the values were changed
+    monsterTest->setY(9232);
+    testSetY(9232, monsterTest->getY());
+    platformTest->setY(23);
+    testSetY(23, platformTest->getY());
+    bulletTest->setY(5);
+    testSetY(5, bulletTest->getY());
+    holeTest->setY(34);
+    testSetY(34, holeTest->getY());
+
+    // TESTING: isGone field of Platform
+    testDisappear(platformTest->getIsGone(), false); // test to make sure a Platform is initalized with false value
+    platformTest->disappear();
+    testDisappear(true, platformTest->getIsGone());
+
+    // DELETEING TESTS FOR MEMORY
+    delete monsterTest;
+    delete platformTest;
+    delete bulletTest;
+    delete holeTest;
+
+
 
     // define constants
     const int height = 850;
@@ -537,6 +614,7 @@ int main()
         {
             isGameOver = true;
             losingSound.play();
+            monsterSound.stop();
         }
         // what to do when the user reaches a certain height (generate new stuff)
         else if (y < ceiling) 
@@ -827,8 +905,48 @@ int main()
         }
 
         window.display();
-
+    
     }
+
+    // CLEANING UP MEMORY LEAKS
+
+    for (int i = 0; i < greenPlatforms.size(); i++) 
+    {
+        delete greenPlatforms[i];
+    }
+    // delete[] greenPlatforms;
+
+    for (int i = 0; i < brownPlatforms.size(); i++) 
+    {
+        delete brownPlatforms[i];
+    }
+    // delete[] brownPlatforms;
+
+    for (int i = 0; i < bluePlatforms.size(); i++) 
+    {
+        delete bluePlatforms[i];
+    }
+    // delete[] bluePlatforms;
+
+    for (int i = 0; i < greenSpringPlatforms.size(); i++) 
+    {
+        delete greenSpringPlatforms[i];
+    }
+    // delete[] greenSpringPlatforms;
+
+    for (int i = 0; i < monsters.size(); i++) 
+    {
+        delete monsters[i];
+    }
+    // delete[] monsters;
+
+    for (int i = 0; i < bullets.size(); i++)
+    {
+        delete bullets[i];
+    }
+    // delete[] bullets;
+
+    delete holeToRender;
 
     return 0;
 }
